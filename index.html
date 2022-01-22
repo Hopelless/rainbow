@@ -1,22 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="main.css">
-    <script src="main.js" defer></script>
-</head>
-<body>
-    <div class="main_div">
-        <button class="btn btn-two" id="button" onclick="change()">DO NOT TORCH THE BUTTON</button>
-        <script type="text/javascript">
-            function change() {
-                alert("FUCK YOURSELF");
-                
-            }
-        </script>
+    <title>Dolya MZFKRS</title>
+  </head>
+  <body>
+<div class="container">
+    <div class="input">
+        <input type="number" id="HCb" placeholder="Home Credit Bank">
+        <input type="number" id="Kb" placeholder="Kaspi Bank">
+        <input type="number" id="Eb"placeholder="Eurasian Bank">
+        <input type="number" id="Ab"placeholder="Alfa bank">
+        <input type="submit" value="Jmi" onclick="dolya()">
     </div>
+    <div class="result">
+        <a6 id="Pipi">sum</a6>
+    <br>
+        <a6 id="HCbr">HCbr</a6>
+    <br>
+        <a6 id="Kbr">Kbr</a6>
+    <br>
+        <a6 id="Ebr">Ebr</a6>
+    <br>
+        <a6 id="Abr">Abr</a6>
+    </div>
+</div>
+<style type="text/css">
+	*{
+	margin: auto;
+	}
+	.body {
+	width: 100%;
+	height: auto;
+	}
+
+	.container {
+	padding: 12px;
+	min-height: 100vh;
+	animation-name: bckgc;
+	animation-duration: 7s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	}
+	
+	@keyframes bckgc {
+	from {
+    	background-color: rgb(255, 0, 0);
+	}
+
+	16.6% {
+   	 background-color: rgb(255, 0, 255);
+	}
+	33.3% {
+    	background-color: rgb(0, 0, 255);
+	}
+	50% {
+	    background-color: rgb(0, 255, 255);
+	}
+	66.6% {
+	    background-color: rgb(0, 255, 0);
+	}
+	83.3% {
+	    background-color: rgb(255, 255, 0);
+	}
+	to {
+	    background-color: rgb(255, 0, 0);
+	}
+	}
+	.input {
+	display: grid;
+	}
+</style>
+<script>
+  function dolya() {
+	let HCb = parseInt(document.getElementById('HCb').value);
+	let Kb = parseInt(document.getElementById('Kb').value);
+	let Eb = parseInt(document.getElementById('Eb').value);
+	let Ab = parseInt(document.getElementById('Ab').value);
+
+	let All = HCb + Kb + Eb + Ab;
+	let HCbr = HCb * 100 / All;
+	let Kbr = Kb * 100 / All;
+	let Ebr = Eb * 100 / All;
+	let Abr = Ab * 100 / All;
+	
+	document.getElementById('Pipi').innerHTML = "Obshaya summa: " +Math.round(All);
+	document.getElementById('HCbr').innerHTML = "HCB: " + Math.round(HCbr) +"%";
+	document.getElementById('Kbr').innerHTML = "KB: " + Math.round(Kbr) + "%";
+	document.getElementById('Ebr').innerHTML = "EB: " + Math.round(Ebr) + "%";
+	document.getElementById('Abr').innerHTML = "AB: " + Math.round(Abr) + "%";
+}
+
+</script>
 </body>
 </html>
