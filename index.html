@@ -9,87 +9,117 @@
 <div class="container">
     <div class="input">
         <input type="number" id="HCb" placeholder="Home Credit Bank">
+        <input type="number" id="FZp" placeholder="Сумма фз">
         <input type="number" id="Kb" placeholder="Kaspi Bank">
         <input type="number" id="Eb"placeholder="Eurasian Bank">
         <input type="number" id="Ab"placeholder="Alfa bank">
-        <input type="submit" value="Jmi" onclick="dolya()">
+        <input type="submit" value="Расчитать" onclick="dolya()">
     </div>
     <div class="result">
-        <a6 id="Pipi">sum</a6>
+        <a6 id="Pipi">Тут будет общая сумма</a6> 
     <br>
-        <a6 id="HCbr">HCbr</a6>
+        <a6 id="HCbr">Онбаган банк:</a6> <a6 id="HCbr_r"> </a6> <a6 id="FZpr"> </a6>
     <br>
-        <a6 id="Kbr">Kbr</a6>
+        <a6 id="Kbr">Каспи банк:</a6>   <a6 id="Kbr_r"> </a6>
     <br>
-        <a6 id="Ebr">Ebr</a6>
+        <a6 id="Ebr">Ебраз банк:</a6>   <a6 id="Ebr_r"> </a6>
     <br>
-        <a6 id="Abr">Abr</a6>
+        <a6 id="Abr">Эльфэ бэнк:</a6>   <a6 id="Abr_r"> </a6>
     </div>
 </div>
 <style type="text/css">
-	*{
-	margin: auto;
-	}
-	.body {
-	width: 100%;
-	height: auto;
-	}
+ *{
+ margin: auto;
+ }
+ .body {
+ width: 100%;
+ height: auto;
+ }
 
-	.container {
-	padding: 12px;
-	min-height: 100vh;
-	animation-name: bckgc;
-	animation-duration: 7s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	}
-	
-	@keyframes bckgc {
-	from {
-    	background-color: rgb(255, 0, 0);
-	}
+ .container {
+ padding: 12px;
+ min-height: 100vh;
+ animation-name: bckgc;
+ animation-duration: 7s;
+ animation-iteration-count: infinite;
+ animation-direction: alternate;
+ }
+ 
+ @keyframes bckgc {
+ from {
+     background-color: rgb(255, 0, 0);
+ }
 
-	16.6% {
-   	 background-color: rgb(255, 0, 255);
-	}
-	33.3% {
-    	background-color: rgb(0, 0, 255);
-	}
-	50% {
-	    background-color: rgb(0, 255, 255);
-	}
-	66.6% {
-	    background-color: rgb(0, 255, 0);
-	}
-	83.3% {
-	    background-color: rgb(255, 255, 0);
-	}
-	to {
-	    background-color: rgb(255, 0, 0);
-	}
-	}
-	.input {
-	display: grid;
-	}
+ 16.6% {
+     background-color: rgb(255, 0, 255);
+ }
+ 33.3% {
+     background-color: rgb(0, 0, 255);
+ }
+ 50% {
+     background-color: rgb(0, 255, 255);
+ }
+ 66.6% {
+     background-color: rgb(0, 255, 0);
+ }
+ 83.3% {
+     background-color: rgb(255, 255, 0);
+ }
+ to {
+     background-color: rgb(255, 0, 0);
+ }
+ }
+ .input {
+ display: grid;
+ }
 </style>
 <script>
   function dolya() {
-	let HCb = parseInt(document.getElementById('HCb').value);
-	let Kb = parseInt(document.getElementById('Kb').value);
-	let Eb = parseInt(document.getElementById('Eb').value);
-	let Ab = parseInt(document.getElementById('Ab').value);
+ let HCb = parseInt(document.getElementById('HCb').value);
+ let Kb = parseInt(document.getElementById('Kb').value);
+ let Eb = parseInt(document.getElementById('Eb').value);
+ let Ab = parseInt(document.getElementById('Ab').value);
+ let FZ = parseInt(document.getElementById('FZp').value);
 
-	let All = HCb + Kb + Eb + Ab;
-	let HCbr = HCb * 100 / All;
-	let Kbr = Kb * 100 / All;
-	let Ebr = Eb * 100 / All;
-	let Abr = Ab * 100 / All;
-	
-	document.getElementById('Pipi').innerHTML = "Obshaya summa: " +Math.round(All);
-	document.getElementById('HCbr').innerHTML = "HCB: " + Math.round(HCbr) +"%";
-	document.getElementById('Kbr').innerHTML = "KB: " + Math.round(Kbr) + "%";
-	document.getElementById('Ebr').innerHTML = "EB: " + Math.round(Ebr) + "%";
-	document.getElementById('Abr').innerHTML = "AB: " + Math.round(Abr) + "%";
+if (isNaN(HCb)){
+    HCb = 0;
+}
+if (isNaN(Eb)){
+    Eb = 0;
+}
+if (isNaN(Kb)){
+    Kb = 0;
+}
+if (isNaN(Ab)){
+    Ab = 0;
+}
+ let All = HCb + Kb + Eb + Ab;
+ let HCbr = HCb * 100 / All;
+ let Kbr = Kb * 100 / All;
+ let Ebr = Eb * 100 / All;
+ let Abr = Ab * 100 / All;
+ let FZpr = document.getElementById("FZpr");
+
+
+if (isNaN(FZ)) {
+    FZ =0;
+}
+
+
+FZpr.innerHTML = "Проник. ФЗ: " + Math.round(FZ * 100 / HCb) + "%";
+
+
+document.getElementById("HCbr_r").innerHTML = HCb + "тг";
+
+document.getElementById("Kbr_r").innerHTML = Kb + "тг";
+document.getElementById("Ebr_r").innerHTML = Eb + "тг";
+document.getElementById("Abr_r").innerHTML = Ab + "тг";
+
+ document.getElementById('Pipi').innerHTML = "Obshaya summa: " +Math.round(All) + "тг";
+ document.getElementById('HCbr').innerHTML = "HCB: " + Math.round(HCbr) +"%     ";
+ document.getElementById('Kbr').innerHTML = "KB: " + Math.round(Kbr) + "%       ";
+ document.getElementById('Ebr').innerHTML = "EB: " + Math.round(Ebr) + "%       ";
+ document.getElementById('Abr').innerHTML = "AB: " + Math.round(Abr) + "%       ";
 }
 
 </script>
