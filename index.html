@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dolya MZFKRS</title>
+    <title>Креатед бай ОТЕЦ</title>
   </head>
   <body>
 <div class="container">
@@ -15,6 +15,8 @@
         <input type="number" id="Ab"placeholder="Alfa bank">
         <input type="submit" value="Расчитать" onclick="dolya()">
     </div>
+<div>
+</
     <div class="result">
         <a6 id="Pipi">Тут будет общая сумма</a6> 
     <br>
@@ -109,17 +111,19 @@ if (isNaN(FZ)) {
 FZpr.innerHTML = "Проник. ФЗ: " + Math.round(FZ * 100 / HCb) + "%";
 
 
-document.getElementById("HCbr_r").innerHTML = HCb + "тг";
+document.getElementById("HCbr_r").innerHTML = HCb.toLocaleString('ru') + "тг";
 
-document.getElementById("Kbr_r").innerHTML = Kb + "тг";
-document.getElementById("Ebr_r").innerHTML = Eb + "тг";
-document.getElementById("Abr_r").innerHTML = Ab + "тг";
+document.getElementById("Kbr_r").innerHTML = Kb.toLocaleString('ru') + "тг";
+document.getElementById("Ebr_r").innerHTML = Eb.toLocaleString('ru') + "тг";
+document.getElementById("Abr_r").innerHTML = Ab.toLocaleString('ru') + "тг";
 
- document.getElementById('Pipi').innerHTML = "Общая сумма: " +Math.round(All) + "тг";
+ document.getElementById('Pipi').innerHTML = "Общая сумма: " + Math.round(All).toLocaleString('ru') + "тг";
  document.getElementById('HCbr').innerHTML = "HCB: " + Math.round(HCbr) +"%     ";
  document.getElementById('Kbr').innerHTML = "KB: " + Math.round(Kbr) + "%       ";
  document.getElementById('Ebr').innerHTML = "EB: " + Math.round(Ebr) + "%       ";
  document.getElementById('Abr').innerHTML = "AB: " + Math.round(Abr) + "%       ";
+
+
 }
 
 </script>
